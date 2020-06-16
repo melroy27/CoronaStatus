@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
       console.log('WORLD', this.worldStat);
     });
 
-    this.getService.getByCountry().subscribe((res) => {
+    this.getService.getByCountry().subscribe((res: any) => {
       this.countryStat = res.countries_stat;
       console.log('COUNTRY', this.countryStat);
     });
