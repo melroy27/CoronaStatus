@@ -1,38 +1,44 @@
-<h1 style="text-align: center;">This is the World's Current Scene</h1>
-<div class="container">
-<p-table [value]="colls" >
-    <ng-template pTemplate="header"> 
-        <tr>
-            <th>Active Cases</th>
-            <th>New Cases</th>
-            <th>New Deaths</th>
-            <th>Serious Critical</th>
-            <th>Last Updated at..</th>
-            <th>Total Cases</th>
-            <th>Total Deaths</th>
-            <th>Total Recovered</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body">
-        <tr>
-            <td >{{worldStat.active_cases}}</td>
-            <td >{{worldStat.new_cases}}</td>
-            <td >{{worldStat.new_deaths}}</td>
-            <td >{{worldStat.serious_critical}}</td>
-            <td >{{worldStat.statistic_taken_at}}</td>
-            <td >{{worldStat.total_cases}}</td>
-            <td >{{worldStat.total_deaths}}</td>
-            <td >{{worldStat.total_recovered}}</td>
-        </tr>
-    </ng-template>
-</p-table>
-</div>
+<h1 style="text-align: center;flex-wrap: wrap;">This is the World's Current Scene</h1>
+<div class="table">
+    <div class="p-grid p-justify-between">
+        <div class="p-col-offset-6 p-md-9 p-lg-12">
+            <p-table [value]="colls">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Active Cases</th>
+                        <th>New Cases</th>
+                        <th>New Deaths</th>
+                        <th>Serious Critical</th>
+                        <th>Last Updated at..</th>
+                        <th>Total Cases</th>
+                        <th>Total Deaths</th>
+                        <th>Total Recovered</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <tr>
+                        <td>{{worldStat.active_cases}}</td>
+                        <td>{{worldStat.new_cases}}</td>
+                        <td>{{worldStat.new_deaths}}</td>
+                        <td>{{worldStat.serious_critical}}</td>
+                        <td>{{worldStat.statistic_taken_at}}</td>
+                        <td>{{worldStat.total_cases}}</td>
+                        <td>{{worldStat.total_deaths}}</td>
+                        <td>{{worldStat.total_recovered}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+
 <p-table #dt [columns]="cols" [value]="countryStat" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords}  entries  ">
     <ng-template pTemplate="caption">
-        <div style="text-align: left">        
+        <div style="text-align: left">
             <i class="pi pi-search"></i>
-            <input type="text" pInputText size="50" placeholder="Search Country" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            <input type="text" pInputText size="50" placeholder="Search Country"
+                (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
         </div>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
@@ -52,14 +58,15 @@
 </p-table>
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <img src="..." class="rounded mr-2" alt="...">
-      <strong class="mr-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        <img src="..." class="rounded mr-2" alt="...">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="toast-body">
-      Hello, world! This is a toast message.
+        Hello, world! This is a toast message.
     </div>
-  </div>
+</div>
+</div>
